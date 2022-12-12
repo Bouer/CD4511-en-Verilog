@@ -1,0 +1,15 @@
+
+module latch( input [7:0] F, iinput LE, output reg [7:0] y );
+reg [7:0] x;
+always @(LE,F,x) begin
+	if (LE == 0) begin
+       y = F;
+	       x = F;
+end
+else begin                  
+       	     y = x;
+	end
+end		
+endmodule
+
+
