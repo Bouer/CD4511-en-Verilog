@@ -1,0 +1,19 @@
+
+module plexor( input [7:0] G, input [7:0] Y, input LT, input LE, input BI,
+		 output reg [7:0] S );
+always @(*)
+   if (LT == 0) begin
+        S = 8'b11111111;  // LT
+   end
+   else if (BI == 0) begin
+        S = 8'b00000000;
+   end
+   else begin
+        if ( LE == 0) begin
+	S = G;
+        end
+        else begin	
+	S = Y;
+        end
+end
+endmodule
